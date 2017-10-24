@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "devDependencies": {},
+  "scripts": {
+    "copyAssets": ""
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "copy-dir": "^0.3.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "jquery-validation": "^1.17.0",
+    "jquery-validation-unobtrusive": "^3.2.6",
+    "underscore": "^1.8.3"
+  }
+}

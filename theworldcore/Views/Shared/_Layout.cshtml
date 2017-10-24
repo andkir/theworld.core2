@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>The world - @ViewBag.Title</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
+</head>
+<body>
+<div id="sidebar">
+@if (User.Identity.IsAuthenticated)
+{
+    <img src="~/img/22.jpg" alt="headshot" class="headshot"/>
+}
+    <span>Superman</span>
+    <ul class="nav">
+        <li class="active"><a asp-controller="" asp-action="">Home</a></li>
+        <li><a asp-controller="App" asp-action="About">About</a></li>
+        <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <li><a asp-controller="App" asp-action="Trips">My Trips</a></li>
+            <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
+        }
+    </ul>
+</div>
+    <div id="wrapper">
+        <div id="main">
+            <div>
+                <button id="hideSidebar" class="btn btn-primary">
+                    <i class="fa fa-angle-left"></i>
+                </button>
+            </div>
+            <div class="container-fluid"> @RenderBody()</div>
+        </div>
+        <div id="footer" class="nav navbar-nav-default tex ">
+            <footer class="text-default">
+                <h4>&copy; 2017-2018 Best years are yet to come!</h4>
+            </footer>
+        </div>
+    </div>
+
+<script src="~/lib/jquery.min.js"></script>
+
+    @RenderSection("scripts", false)
+    <script src="~/js/site.js"></script>
+
+</body>
+</html>
