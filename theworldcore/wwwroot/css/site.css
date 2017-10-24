@@ -17,7 +17,7 @@ input[type=text], input[type=password], textarea {
 */
 
 #main {
-    background: #999;
+    background: #fff;
     padding: 4px;
     margin: 0;
 }
@@ -76,4 +76,8 @@ input[type=text], input[type=password], textarea {
 #wrapper.hideSidebar {
     margin: 0;
     transition: margin-left ease .25s;
+}
+
+footer{
+    background-color:aqua;
 }
