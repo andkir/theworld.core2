@@ -28,8 +28,8 @@ namespace theworldcore.Controllers.Web
         [Authorize]
         public IActionResult Trips()
         {
-            var trips = worldRepository.GetAllTrips();
-            return View(trips);
+            //var trips = worldRepository.GetAllTrips();
+            return View();
         }
 
         public IActionResult About()

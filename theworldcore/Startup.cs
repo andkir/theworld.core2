@@ -72,10 +72,10 @@ namespace theworldcore
             app.UseAuthentication();
 
             app.UseMvc(config => config.MapRoute("Default", "{controller=App}/{action=Index}/{id?}"));
-            app.Run(async (context) =>
+            /*app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
-            });
+            });*/
 
             seeder.EnsureSeedData().Wait();
         }

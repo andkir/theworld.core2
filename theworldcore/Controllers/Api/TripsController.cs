@@ -17,8 +17,9 @@ namespace theworldcore.Controllers.Api
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
+           await Task.Delay(1000);
            return Ok(repository.GetTripsByUsername(User.Identity.Name));
         }
 
@@ -32,6 +33,7 @@ namespace theworldcore.Controllers.Api
                 repository.AddTrip(newTrip);
                 await repository.SaveChangesAsync();
 
+                await Task.Delay(1000);
                 return Created($"api/trips/{newTrip.Id}", newTrip);
             }
 

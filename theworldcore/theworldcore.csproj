@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Pages\App\" />
-    <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
   <ItemGroup>

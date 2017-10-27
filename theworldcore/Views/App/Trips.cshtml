@@ -1,62 +1,15 @@
-﻿@model IEnumerable<theworldcore.Model.Trip>
-@{
+﻿@{
     ViewBag.Title = "Trips";
 }
 @section Scripts{
     <script src="~/lib/angular.js"></script>
+    <script src="~/lib/angular-route.min.js"></script>
+    <script src="~/js/simpleControls.js"></script>
     <script src="~/js/app-trips.js"></script>
     <script src="~/js/tripsController.js"></script>
+    <script src="~/js/tripsEditorController.js"></script>
 }
 <div class="row" ng-app="app-trips">
+    <div ng-view></div>
 
-    <div ng-controller="tripsController as vm" class="col-md-6 col-md-offset-2">
-        <table class="table table-responisve table-striped">
-            <tr ng-repeat="trip in vm.trips">
-                <td>{{trip.name}}</td>
-                <td>{{trip.created | date:'dd-MM-yyyy'}}</td>
-                <td><a href="#" class="btn btn-primary">Manage</a></td>
-            </tr>
-        </table>
-
-        <form novalidate name="addTripForm" ng-submit="vm.addTrip()">
-            <div class="form-group">
-                <label for="name">New Trip</label>
-                <input type="text" class="form-control" name="name" id="name" ng-model="vm.newTrip.name" required ng-minlength="5"/>
-                <span ng-show="addTripForm.$error.required" class="text-warning">Name is required!</span>
-                <span ng-show="addTripForm.$error.minlength" class="text-warning">Name should be at least 5 characters length</span>
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Add" class="btn btn-sm btn-success" ng-disabled="addTripForm.$invalid"/>
-            </div>
-        </form>
-    </div>
-
-    <div class="col-md-6">
-        <div>
-            <h2>The world!</h2>
-            <p>This is going to be a fun site soon!</p>
-        </div>
-        <form method="post">
-            <div class="form-group">
-                <label>Date</label>
-                <input class="form-control" />
-            </div>
-            <div class="form-group">
-                <label>Loacation</label>
-                <input class="form-control" />
-            </div>
-            <div class="form-group">
-                <button class="btn btn-default">Cancel</button>
-                <input type="submit" name="name" value="Add" class="btn-success" />
-            </div>
-        </form>
-    </div>
-    <div class="col-md-6">
-        <h3>Trips: </h3>
-        @foreach (var trip in Model)
-        {
-            <div>@trip.Name</div>
-        }
-    </div>
 </div>
